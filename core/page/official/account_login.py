@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 
 class AccountLogin(BasePage):
     def account_login(self, username, password):
-        self.find_element((By.CSS_SELECTOR, '[placeholder="请输入1手机号或邮箱"] input')).click()
+        self.find_element((By.CSS_SELECTOR, '[placeholder="请输入手机号或邮箱"] input')).click()
         self.find_element((By.CSS_SELECTOR, '[placeholder="请输入手机号或邮箱"] input')).send_keys(username)
 
         self.find_element((By.CSS_SELECTOR, '[placeholder="请输入密码"] input')).click()

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from core.page.basepage import BasePage
 
 import pytest
 import os
