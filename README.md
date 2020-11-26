@@ -57,9 +57,8 @@ pytest --alluredir= log/report/xml --allure_features=测试登录功能,测试�
 pytest --alluredir= log/report/xml --allure_stories=测试已登录的场景 testcases/alluredemo
 按severity运⾏测试⽤例
 pytest --alluredir= log/testreport/xml --allure_severities=blocker testcases/alluredemo
-
-在core中编写页面，在tests中编写用例
-
+------------------------------------------------------------------------------------------------------------------------
+使用：
 脚本执行：
 pytest tests\test_official\test_account_login.py -s -q --alluredir=.\report\ui_report\result1
 allure打开报告
