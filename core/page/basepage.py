@@ -9,23 +9,16 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from core.utils.getdir import PROPATH
+from core import config_webdriver
 
 
 class BasePage:
     _url = ''
 
     def __init__(self, driver: WebDriver = None):
-        browser = os.getenv('browser')
         self._driver = None
         if not driver:
-            if browser == '' or 'chrome':
-                self._driver = webdriver.Chrome()
-            elif browser == 'ie':
-                self._driver = webdriver.Ie()
-            elif browser == 'firefox':
-                self._driver = webdriver.Firefox()
-            else:
-                pass
+           self._driver = config_webdriver.init_driver()
         else:
             self._driver = driver
         if self._url != '':
@@ -52,7 +45,8 @@ class BasePage:
         try:
             element = WebDriverWait(self._driver, 5).until(ec.presence_of_element_located((locator[0], locator[1])))
         except TimeoutException as e:
-            self.screen_shot(name)
+            pass
+            # self.screen_shot(name)
             # there need to write log
         return element
 

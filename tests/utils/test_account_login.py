@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from core.page.official.home import Home
+from _pytest import runner
 
 
 class TestCase():
@@ -12,3 +13,4 @@ class TestCase():
 
     def test_accountlogin(self):
         self.home.goto_phone_login().goto_account_login().account_login('123', '123')
+        assert 1 == 2
